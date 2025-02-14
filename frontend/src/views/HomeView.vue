@@ -1,3 +1,3 @@
 <script setup lang="ts"></script>
 
-<template>example text</template>
+<template>Nigga ma vihkan seda</template>

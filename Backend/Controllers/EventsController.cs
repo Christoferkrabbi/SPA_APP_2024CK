@@ -15,7 +15,7 @@ public class EventsController : ControllerBase {
         return Ok(events);
 
     }   
-    [HttpPost] public IActionResult Create([FromBody] Event e) {
+    [HttpPost] public IActionResult CreateEvent([FromBody] Event e) {
         var dbEvent = context.EventList?.Find(e.Id); 
         if (dbEvent == null) {
             context.EventList?.Add(e); 
@@ -31,6 +31,9 @@ public class EventsController : ControllerBase {
         context.SaveChanges();
         return NoContent();
     }
+
+
+
     [HttpDelete("{id}")] public IActionResult Delete(int id) {
         var eventToDelete = context.EventList?.Find(id);
         if (eventToDelete == null) return NotFound();        
