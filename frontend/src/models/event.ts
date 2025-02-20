@@ -1,10 +1,12 @@
 export interface Event {
     id: number;
-    Age: number;
-    Name: string;
+    type: string;
+    description: string;
+    location: string;
+    date: string;
   }
   
   export interface State {
-    people: Person[];
+    events: Event[];
   }
   
