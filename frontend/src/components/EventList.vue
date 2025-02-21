@@ -1,17 +1,20 @@
 <template>
-  <div class="about">
-    <h1>Eventlist</h1>
-    <div class="eventlist">
-      <DataTable :value="events" v-if="events.length > 0 ">
-        <Column field="id" header="Sündmuse id" style="color: black; "/>
-        <Column field="type" header="Sündmuse tüüp" style="color: black; "/>
-        <Column field="description" header="Kirjeldus" style="color: black; "/>
-        <Column field="location" header="Asukoht" style="color: black;"/>
-        <Column field="date" header="Kuupäev" style="color: black;"/>
-      </DataTable>
-      <div v-else>Sündmused puuduvad</div>
+    <div class="about">
+        <button @click="CreateEvent">Lisa sündmus</button>
+        <EventList :title="title" />
+       
+        <h1>Eventlist</h1>
+        <div class="eventlist">
+            <DataTable :value="events" v-if="events.length > 0 ">
+                <Column field="id" header="Sündmuse id" style="color: black; " />
+                <Column field="type" header="Sündmuse tüüp" style="color: black; " />
+                <Column field="description" header="Kirjeldus" style="color: black; " />
+                <Column field="location" header="Asukoht" style="color: black;" />
+                <Column field="date" header="Kuupäev" style="color: black;" />
+            </DataTable>
+            <div v-else>Sündmused puuduvad</div>
+        </div>
     </div>
-  </div>
 </template>
 
 

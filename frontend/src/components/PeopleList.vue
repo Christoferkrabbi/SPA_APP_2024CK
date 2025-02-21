@@ -1,15 +1,17 @@
 <template>
-  <div class="about">
-    <h1>Peoplelist</h1>
-    <div class="peoplelist">
-      <DataTable :value="people" v-if="people.length > 0 ">
-        <Column field="id" header="Inimese id" style="color: black; "/>
-        <Column field="age" header="Inimese vanus" style="color: black; "/>
-        <Column field="Name" header="Inimese nimi" style="color: black; "/> 
-      </DataTable>
-      <div v-else>Inimesed puuduvad</div>
+    <button @click="CreatePerson">Lisa Isik</button>
+    <PeopleList :title="title" />
+    <div class="about">
+        <h1>Peoplelist</h1>
+        <div class="peoplelist">
+            <DataTable :value="people" v-if="people.length > 0 ">
+                <Column field="id" header="Inimese id" style="color: black; " />
+                <Column field="age" header="Inimese vanus" style="color: black; " />
+                <Column field="Name" header="Inimese nimi" style="color: black; " />
+            </DataTable>
+            <div v-else>Inimesed puuduvad</div>
+        </div>
     </div>
-  </div>
 </template>
 
 
